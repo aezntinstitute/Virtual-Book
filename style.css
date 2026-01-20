@@ -112,7 +112,7 @@ body::after {
 }
 
 .page.flipped {
-  transform: rotateY(-180deg);
+  transform: rotateY(-360deg);
 }
 
 .page:not(.active) {
