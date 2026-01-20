@@ -5,7 +5,6 @@ const fsBtn = document.getElementById("fullscreenBtn");
 let current = 0;
 let busy = false;
 
-/* Page flip functions */
 function nextPage() {
   if (current < pages.length - 1) {
     pages[current].classList.add("flipped");
@@ -24,7 +23,6 @@ function prevPage() {
   }
 }
 
-/* Desktop scroll */
 window.addEventListener("wheel", (e) => {
   if (busy) return;
   busy = true;
@@ -34,7 +32,6 @@ window.addEventListener("wheel", (e) => {
   setTimeout(() => busy = false, 1000);
 });
 
-/* Mobile swipe */
 let startX = 0;
 
 window.addEventListener("touchstart", (e) => {
@@ -56,7 +53,6 @@ window.addEventListener("touchend", (e) => {
   setTimeout(() => busy = false, 1000);
 });
 
-/* Double tap to zoom */
 let lastTap = 0;
 
 book.addEventListener("touchend", () => {
@@ -67,7 +63,6 @@ book.addEventListener("touchend", () => {
   lastTap = now;
 });
 
-/* Fullscreen toggle */
 fsBtn.addEventListener("click", () => {
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen();
@@ -76,5 +71,4 @@ fsBtn.addEventListener("click", () => {
   }
 });
 
-/* Hide browser UI on load (mobile) */
 window.scrollTo(0, 1);
