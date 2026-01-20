@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.book {
+  width: 600px;
+  height: 848px;
+  perspective: 2500px;
+  position: relative;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transform-origin: left;
+  transition: transform 1s ease-in-out;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+.page img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* IMPORTANT for A4 */
+  background: white;
+}
+
+.page.flipped {
+  transform: rotateY(-360deg);
+}
+
+.page:not(.active) {
+  z-index: -1;
+}
