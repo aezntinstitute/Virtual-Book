@@ -150,3 +150,36 @@ body::after {
     width: 94vw;
   }
 }
+
+.social-links.right {
+  position: fixed;
+  bottom: 75px;
+  right: 20px;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  pointer-events: auto;
+}
+
+.social-links.right a {
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.social-links.right img {
+  width: 20px;
+  height: 20px;
+  filter: invert(30%);
+}
